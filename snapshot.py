@@ -12,4 +12,3 @@ except KeyError:
           "and interval - time in minutes between taking snapshots")
 except KeyboardInterrupt:
     print("Snapshot stops its work")
-

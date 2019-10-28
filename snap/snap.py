@@ -63,7 +63,7 @@ class Record:
         Record.i += 1
         namekey = 'snapshot' + str(Record.i)
         line = "{0}: {1} : cpu_percent = {2}, memory_overall = {3}, virt_mem_info = {4} " \
-               "disk_io_counters_read = {5}, disk_io_counters_write = {6}, net_io_counters_sent = " \
+               "disk_io_counters_read = {5}, disk_io_counters_write = {6}, net_io_counters_sent = "\
                "{7}, net_io_counters_recv = {8}".format(namekey, TIMESTAMP, cpu_percent,
                                                         memory_overall, virt_mem_info,
                                                         disk_io_counters_read,
