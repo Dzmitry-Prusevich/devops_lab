@@ -35,12 +35,12 @@ class Record:
         disk_io_counters_write = psutil.disk_io_counters().write_count
         net_io_counters_sent = psutil.net_io_counters().bytes_sent
         net_io_counters_recv = psutil.net_io_counters().bytes_recv
-        return TIMESTAMP, cpu_percent, memory_overall, virt_mem_info, disk_io_counters_read, \
-               disk_io_counters_write, net_io_counters_sent, net_io_counters_recv
+        return (TIMESTAMP, cpu_percent, memory_overall, virt_mem_info, disk_io_counters_read,
+                disk_io_counters_write, net_io_counters_sent, net_io_counters_recv)
 
     def write_json(self):
-        TIMESTAMP, cpu_percent, memory_overall, virt_mem_info, disk_io_counters_read, \
-        disk_io_counters_write, net_io_counters_sent, net_io_counters_recv = self.cur_state()
+        (TIMESTAMP, cpu_percent, memory_overall, virt_mem_info, disk_io_counters_read,
+         disk_io_counters_write, net_io_counters_sent, net_io_counters_recv) = self.cur_state()
         Record.i += 1
         namekey = 'snapshot' + str(Record.i)
         self.data[namekey] = []
@@ -58,15 +58,18 @@ class Record:
             json.dump(self.data, outfile)
 
     def write_text(self):
-        TIMESTAMP, cpu_percent, memory_overall, virt_mem_info, disk_io_counters_read, \
-        disk_io_counters_write, net_io_counters_sent, net_io_counters_recv = self.cur_state()
+        (TIMESTAMP, cpu_percent, memory_overall, virt_mem_info, disk_io_counters_read,
+         disk_io_counters_write, net_io_counters_sent, net_io_counters_recv) = self.cur_state()
         Record.i += 1
         namekey = 'snapshot' + str(Record.i)
         line = "{0}: {1} : cpu_percent = {2}, memory_overall = {3}, virt_mem_info = {4} " \
-               "disk_io_counters_read = {5}, disk_io_counters_write = {6}, " \
-               "net_io_counters_sent = {7}, net_io_counters_recv = {8}".format(
-            namekey, TIMESTAMP, cpu_percent, memory_overall, virt_mem_info, disk_io_counters_read,
-            disk_io_counters_write, net_io_counters_sent, net_io_counters_recv)
+               "disk_io_counters_read = {5}, disk_io_counters_write = {6}, net_io_counters_sent = " \
+               "{7}, net_io_counters_recv = {8}".format(namekey, TIMESTAMP, cpu_percent,
+                                                        memory_overall, virt_mem_info,
+                                                        disk_io_counters_read,
+                                                        disk_io_counters_write,
+                                                        net_io_counters_sent,
+                                                        net_io_counters_recv)
         with open('data.txt', 'a') as the_file:
             the_file.write(line + "\n")
 

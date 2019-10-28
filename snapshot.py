@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-from pip._vendor.certifi import where
-
 from snap import snap
 
 try:
@@ -14,3 +12,4 @@ except KeyError:
           "and interval - time in minutes between taking snapshots")
 except KeyboardInterrupt:
     print("Snapshot stops its work")
+
