@@ -1,5 +1,5 @@
 # enter size
-size = str(input("Enter size (odd numbers) of your door mate (N*M): "))
+size = input("Enter size (odd numbers) of your door mate (N*M): ")
 size_n = size.split()
 n = int(size_n[0])
 m = int(size_n[1])

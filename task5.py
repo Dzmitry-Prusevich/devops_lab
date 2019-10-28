@@ -15,7 +15,5 @@ for i in move:
     elif i == "U":
         ver_pos += 1
 # compare results
-if hor_pos == in_hor_pos and ver_pos == in_ver_pos:
-    print("true")
-else:
-    print("false")
+print(hor_pos == in_hor_pos and ver_pos == in_ver_pos)
+
