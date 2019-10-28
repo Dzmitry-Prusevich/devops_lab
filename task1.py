@@ -9,7 +9,7 @@ fio = input("Enter fio of student for getting marks")
 # calc average mark
 for i in range(num1):
     if fio == listpupil[i][0]:
-# insert converation because of listpupil.append(input("Enter student and marks").split())
+        # insert converation because of listpupil.append(input("Enter student and marks").split())
         sum_mark = int(listpupil[i][1]) + int(listpupil[i][2]) + int(listpupil[i][3])
         average_mark = (sum_mark) / 3
 print(average_mark)

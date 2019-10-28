@@ -16,4 +16,3 @@ for i in move:
         ver_pos += 1
 # compare results
 print(hor_pos == in_hor_pos and ver_pos == in_ver_pos)
-
