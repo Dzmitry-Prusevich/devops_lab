@@ -10,7 +10,7 @@ except KeyError:
           "[common]\n\n"
           "output = json\n"
           "interval = 5\n\n"
-    "where output - type of file,\n"
-    "and interval - time in minutes between taking snapshots")
+          "where output - type of file,\n"
+          "and interval - time in minutes between taking snapshots")
 except KeyboardInterrupt:
     print("Snapshot stops its work")

@@ -11,3 +11,4 @@ setup(
     description="Application for taking snapshots of your system",
     license="free"
 )
+
