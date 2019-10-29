@@ -34,12 +34,14 @@ def pul_info():
 
 
 def make_req(user, password, author, rep):
-    r = requests.get('https://api.github.com/repos/' + author + '/' + rep + '/pulls', auth=(user, password))
+    r = requests.get('https://api.github.com/repos/' + author + '/' + rep + '/pulls',
+                     auth=(user, password))
     num = r.json()[0]['number']
     number = num + 1
     while number > num:
         try:
-            number = int(input("Input number of pull request you are interested in, less then {0}: ".format(num)))
+            number = int(input("Input number of pull request you are interested in, "
+                               "less then {0}: ".format(num)))
         except ValueError:
             print("It's not valid format. Input integer value!")
     # get info about pull request we are interested in

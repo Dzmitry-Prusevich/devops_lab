@@ -25,7 +25,8 @@ else:
     user = task4.user_git()
     password = task4.pas_git()
     author, rep = args.name, args.repo
-    b, num_comments, day, month, year, ans, time, num_label = task4.make_req(user, password, author, rep)
+    b, num_comments, day, month, year, ans, time, num_label = task4.make_req(user, password,
+                                                                             author, rep)
 
     if args.numcom:
         task4.num_com(num_comments)
