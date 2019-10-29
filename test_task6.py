@@ -34,3 +34,4 @@ class TestPrime(TestCase):
 
     def tearDown(self):
         """Finish"""
+

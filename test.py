@@ -69,7 +69,7 @@ def vers_pyt_all():
     output = str(data.communicate())
     output = output.split("'")
     version = output[1].split("\\n")
-    regexc = re.compile('[1-3]\.\d\.\d')
+    regexc = re.compile(r'[1-3]\.\d\.\d')
     pyt_ver = set()
     for i in range(len(version)):
         pyt_ver.add(str(regexc.findall(version[i])))
