@@ -12,4 +12,4 @@ for i in range(num1):
         # insert converation because of listpupil.append(input("Enter student and marks").split())
         sum_mark = int(listpupil[i][1]) + int(listpupil[i][2]) + int(listpupil[i][3])
         average_mark = (sum_mark) / 3
-print(average_mark)
+print("%.2f" %average_mark)
