@@ -14,8 +14,7 @@ def read_conf():
     output_format = config['common']['output']
     # create file for output information
     out_file = "data." + output_format
-    with open(out_file, 'w') as the_file:
-        the_file.close()
+    open(out_file, 'w').close()
     return config, wait_time, output_format, out_file
 
 
